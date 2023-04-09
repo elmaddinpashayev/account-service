@@ -38,7 +38,7 @@ public class AccountController {
 
     @GetMapping
     public ResponseEntity<List<Account>> getAll(){
-        System.out.println("Salam");
+        System.out.println("Salam123");
         return ResponseEntity.ok(accountService.findAll());
     }
 }
