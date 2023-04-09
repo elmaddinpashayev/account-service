@@ -9,5 +9,3 @@ CREATE TABLE employee2(
                          emp_city text,
                          emp_phone varint
 );
-
-select * from employee
