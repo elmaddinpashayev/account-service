@@ -50,7 +50,7 @@ public class CassandraConfiguration extends AbstractCassandraConfiguration {
 
     @Override
     public String[] getEntityBasePackages() {
-        return new String[] { "com.haydikodlayalim.accountservice.model" }; // Paket adını Account class-ınızın olduğu paket adı ilə əvəz edin.
+        return new String[] { "com.haydikodlayalim.accountservice.model" };
     }
     @Bean
     @Primary
