@@ -1,11 +1,13 @@
-package com.haydikodlayalim.accountservice.model.entity;
+package com.company.accountservice.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
@@ -39,14 +41,16 @@ public class Account implements Serializable {
 
     @Setter
     @Column(value = "birth_date")
-    private Date birthDate;
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+    private LocalDateTime birthDate;
 
     @Setter
     @Column(value = "pwd")
     private String password;
 
     @Column(value = "created_at")
-    private Date createdAt;
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+    private LocalDateTime createdAt;
 
     @Column(value = "is_active")
     private Boolean active;

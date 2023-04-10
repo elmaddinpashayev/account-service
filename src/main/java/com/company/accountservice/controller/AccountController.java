@@ -1,8 +1,8 @@
-package com.haydikodlayalim.accountservice.controller;
+package com.company.accountservice.controller;
 
 
-import com.haydikodlayalim.accountservice.model.entity.Account;
-import com.haydikodlayalim.accountservice.service.AccountService;
+import com.company.accountservice.service.AccountService;
+import com.company.accountservice.model.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,18 +17,18 @@ public class AccountController {
     private final AccountService accountService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Account> get(@PathVariable("id") String id) {
+    public ResponseEntity<AccountDto> get(@PathVariable("id") String id) {
         return ResponseEntity.ok(accountService.get(id));
     }
 
     @PostMapping
-    public ResponseEntity<Account> save(@RequestBody Account account) {
-        return ResponseEntity.ok(accountService.save(account));
+    public ResponseEntity<AccountDto> save(@RequestBody AccountDto accountDto) {
+        return ResponseEntity.ok(accountService.save(accountDto));
     }
 
     @PutMapping
-    public ResponseEntity<Account> update(@PathVariable("id") String id, @RequestBody Account account) {
-        return ResponseEntity.ok(accountService.update(id, account));
+    public ResponseEntity<AccountDto> update(@PathVariable("id") String id, @RequestBody AccountDto accountDto) {
+        return ResponseEntity.ok(accountService.update(id, accountDto));
     }
 
     @DeleteMapping
@@ -37,7 +37,7 @@ public class AccountController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Account>> getAll(){
+    public ResponseEntity<List<AccountDto>> getAll(){
         System.out.println("Salam123");
         return ResponseEntity.ok(accountService.findAll());
     }

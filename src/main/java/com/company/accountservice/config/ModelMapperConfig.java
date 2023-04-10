@@ -1,4 +1,4 @@
-package com.haydikodlayalim.accountservice.config;
+package com.company.accountservice.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 public class ModelMapperConfig {
 
     @Bean
-    public ModelMapper modelMapper() {
+    public ModelMapper getModelMapper() {
         return new ModelMapper();
     }
-
 }
+
