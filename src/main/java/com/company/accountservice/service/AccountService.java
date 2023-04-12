@@ -2,6 +2,9 @@ package com.company.accountservice.service;
 
 import com.company.accountservice.model.dto.AccountDto;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+
 import java.util.List;
 
 
@@ -12,5 +15,5 @@ public interface AccountService {
    AccountDto update(String id,AccountDto accountDto);
    void delete(String id);
 
-   List<AccountDto> findAll();
+   Slice<AccountDto> findAll(Pageable pageable);
 }

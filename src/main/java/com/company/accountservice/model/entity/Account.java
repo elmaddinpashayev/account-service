@@ -41,16 +41,14 @@ public class Account implements Serializable {
 
     @Setter
     @Column(value = "birth_date")
-    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
-    private LocalDateTime birthDate;
+    private Date birthDate;
 
     @Setter
     @Column(value = "pwd")
     private String password;
 
     @Column(value = "created_at")
-    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
     @Column(value = "is_active")
     private Boolean active;

@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountDto {
 
-    private String id ;
+    private String id;
 
     private String username;
     private String name;
@@ -21,11 +22,11 @@ public class AccountDto {
 
     private String email;
 
-    private LocalDateTime birthDate;
+    private Date birthDate;
 
     private String password;
 
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
     private Boolean active;
 }

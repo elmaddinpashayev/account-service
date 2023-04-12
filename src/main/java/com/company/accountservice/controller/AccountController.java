@@ -5,6 +5,8 @@ import com.company.accountservice.service.AccountService;
 import com.company.accountservice.model.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountController {
 
-    @Value("${name}")
-    private String name;
     private final AccountService accountService;
 
     @GetMapping("/{id}")
@@ -40,8 +40,7 @@ public class AccountController {
     }
 
     @GetMapping
-    public ResponseEntity<List<AccountDto>> getAll(){
-        System.out.println("Salam123" + name);
-        return ResponseEntity.ok(accountService.findAll());
+    public ResponseEntity<Slice<AccountDto>> getAll(Pageable pageable){
+        return ResponseEntity.ok(accountService.findAll(pageable));
     }
 }
